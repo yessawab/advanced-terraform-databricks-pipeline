@@ -1,4 +1,4 @@
-resource "databricks_sql_endpoint" "this" {
+/*resource "databricks_sql_endpoint" "this" {
   name             = "Endpoint of ${var.department}"
   cluster_size     = "X-Small"
   max_num_clusters = 3
@@ -23,4 +23,4 @@ resource "databricks_permissions" "can_manage_sql_endpoint" {
     group_name       = databricks_group.data_eng.display_name
     permission_level = "CAN_MANAGE"
   }
-}
+}*/

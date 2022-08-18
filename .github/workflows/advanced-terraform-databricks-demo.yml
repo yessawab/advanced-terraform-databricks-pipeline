@@ -9,10 +9,11 @@ on:
   pull_request:
     branches:
       - main
+      - dev
 
 defaults:
   run:
-    working-directory: examples/databricks-department-clusters-pat
+    working-directory: examples/databricks-department-clusters
 
 env:
   DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
