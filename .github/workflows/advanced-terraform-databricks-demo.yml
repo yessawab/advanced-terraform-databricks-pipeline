@@ -65,7 +65,23 @@ jobs:
       - name: Terraform Validate
         id: validate
         run: terraform validate -no-color
+
+      - name: Verify naming convention using TFLint
+        id: naming_convention
+        run: tflint --enable-rule=terraform_naming_convention
       
+        - name: Enforce variable types using TFLint
+        id: typed_variables
+        run: tflint --enable-rule=terraform_typed_variables       
+      
+      - name: Terraform Unit Tests
+        id: unit_tests
+        run: terraform validate -no-color
+
+      - name: Terraform Integration Tests
+        id: integration_tests
+        run: terraform validate -no-color
+
       - name: Terraform Plan
         id: plan
         run: terraform plan -no-color -input=false
