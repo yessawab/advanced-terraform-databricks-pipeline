@@ -9,7 +9,7 @@ data "databricks_spark_version" "latest_lts" {
 resource "databricks_cluster" "team_cluster" {
   cluster_name            = "${var.department}-${var.cluster_name}"
   spark_version           = data.databricks_spark_version.latest_lts.id
-  node_type_id            = data.databricks_node_type.smallest.id
+  node_type_id            = "Standard_DS3_v2"
   autotermination_minutes = 20
 
   autoscale {

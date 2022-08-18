@@ -153,7 +153,7 @@ jobs:
 
       - name: Terraform Apply
         id: apply
-        run: terraform destroy --force -input=false --auto-approve
+        run: terraform apply -no-color -input=false --auto-approve
         continue-on-error: true
 
       - name: Terraform Apply Status
