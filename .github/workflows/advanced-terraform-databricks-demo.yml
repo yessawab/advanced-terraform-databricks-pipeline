@@ -70,7 +70,7 @@ jobs:
         id: naming_convention
         run: tflint --enable-rule=terraform_naming_convention
       
-        - name: Enforce variable types using TFLint
+      - name: Enforce variable types using TFLint
         id: typed_variables
         run: tflint --enable-rule=terraform_typed_variables       
       
