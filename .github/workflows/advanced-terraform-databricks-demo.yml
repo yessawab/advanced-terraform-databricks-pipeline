@@ -78,10 +78,6 @@ jobs:
         id: unit_tests
         run: terraform validate -no-color
 
-      - name: Terraform Integration Tests
-        id: integration_tests
-        run: terraform validate -no-color
-
       - name: Terraform Plan
         id: plan
         run: terraform plan -no-color -input=false
