@@ -94,7 +94,6 @@ jobs:
         id: unit_tests
         run: |
           cd test/unit_tests/
-          go build terraform_azure_resourcegroup_example_test.go
           go test -v
 
       - name: Terraform Plan
