@@ -89,7 +89,9 @@ jobs:
 
       - name: Terraform Unit Tests
         id: unit_tests
-        run: terraform validate -no-color
+        run: |
+          cd test/unit_tests/
+          go test -v
 
       - name: Terraform Plan
         id: plan
