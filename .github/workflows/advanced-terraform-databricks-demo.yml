@@ -13,7 +13,7 @@ on:
 
 defaults:
   run:
-    working-directory: examples/databricks-department-clusters
+    working-directory: environments/databricks-department-clusters
 
 env:
   DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
@@ -81,6 +81,7 @@ jobs:
       
       - name: Running security checks
         uses: aquasecurity/tfsec-action@v1.0.0
+        working_directory: test/.tfsec
 
       - name: Terraform Unit Tests
         id: unit_tests
@@ -94,8 +95,8 @@ jobs:
       - name: Enforce resource tagging
         uses: terraform-compliance/github_action@main
         with:
-          plan: examples/databricks-department-clusters/plan.out
-          features: examples/databricks-department-clusters/test/features
+          plan: environments/databricks-department-clusters/plan.out
+          features: environments/databricks-department-clusters/test/features
 
       - name: Update Pull Request
         uses: actions/github-script@v6.1.0
