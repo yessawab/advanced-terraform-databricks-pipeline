@@ -51,7 +51,10 @@ jobs:
       - name: Setup TFLint
         uses: terraform-linters/setup-tflint@v2
         with:
-          tflint_version: v0.38.1            
+          tflint_version: v0.38.1  
+          
+      - name: Setup Go
+        uses: actions/setup-go@v2          
                     
       - name: Check formatting of Terraform code
         id: fmt
