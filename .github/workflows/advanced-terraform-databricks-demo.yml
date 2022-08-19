@@ -48,11 +48,14 @@ jobs:
             echo "host = $DATABRICKS_HOST" >> ~/.databrickscfg
             echo "token = $DATABRICKS_TOKEN" >> ~/.databrickscfg
 
-      - uses: terraform-linters/setup-tflint@v2
-        name: Setup TFLint
+      - name: Setup TFLint
+        uses: terraform-linters/setup-tflint@v2
         with:
           tflint_version: v0.38.1            
                     
+      - name: Setup TFSec
+        uses: aquasecurity/tfsec-action@v1.0.0
+
       - name: Check formatting of Terraform code
         id: fmt
         run: |
@@ -79,6 +82,10 @@ jobs:
         id: typed_variables
         run: tflint --enable-rule=terraform_typed_variables       
       
+      - name: Running security checks
+        id: security_checks
+        run: tfsec
+
       - name: Terraform Unit Tests
         id: unit_tests
         run: terraform validate -no-color
