@@ -94,7 +94,7 @@ jobs:
       - name: Enforce resource tagging
         uses: terraform-compliance/github_action@main
         with:
-          plan: plan.out
+          plan: ./plan.out
           features: test/features
 
       - name: Update Pull Request
