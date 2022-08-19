@@ -17,9 +17,9 @@ resource "databricks_cluster" "team_cluster" {
     max_workers = 10
   }
 
-  custom_tags = merge(var.tags, {
-    Team = var.department
-  })
+  //custom_tags = merge(var.tags, {
+    //Team = var.department
+  //})
 }
 
 resource "databricks_permissions" "can_manage_team_cluster" {

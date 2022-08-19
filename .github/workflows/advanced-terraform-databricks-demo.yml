@@ -88,9 +88,15 @@ jobs:
 
       - name: Terraform Plan
         id: plan
-        run: terraform plan -no-color -input=false
+        run: terraform plan -no-color -input=false -out=plan.out
         continue-on-error: true
-      
+
+      - name: Enforce resource tagging
+        uses: terraform-compliance/github_action@main
+        with:
+          plan: plan.out.json
+          features: test/features
+
       - name: Update Pull Request
         uses: actions/github-script@v6.1.0
         env:
