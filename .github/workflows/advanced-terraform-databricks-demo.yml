@@ -81,7 +81,8 @@ jobs:
       
       - name: Running security checks
         uses: aquasecurity/tfsec-action@v1.0.0
-        working_directory: test/.tfsec
+        with:
+            working_directory: test/.tfsec
 
       - name: Terraform Unit Tests
         id: unit_tests
