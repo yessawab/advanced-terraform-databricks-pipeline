@@ -95,7 +95,7 @@ jobs:
         uses: terraform-compliance/github_action@main
         with:
           plan: examples/databricks-department-clusters/plan.out
-          features: test/features
+          features: examples/databricks-department-clusters/test/features
 
       - name: Update Pull Request
         uses: actions/github-script@v6.1.0
