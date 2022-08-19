@@ -82,7 +82,7 @@ jobs:
       - name: Running security checks
         uses: aquasecurity/tfsec-action@v1.0.0
         with:
-            working_directory: test/.tfsec
+            working_directory: environments/databricks-department-clusters/test/.tfsec
 
       - name: Terraform Unit Tests
         id: unit_tests
