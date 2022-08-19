@@ -1,7 +1,6 @@
 package test
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/gruntwork-io/terratest/modules/terraform"
@@ -41,8 +40,6 @@ func TestTerraformBasicExample(t *testing.T) {
 
 	// Run `terraform output` to get the values of output variables
 	actualTextExample := terraform.Output(t, terraformOptions, "cluster_name")
-
-	fmt.Printf(actualTextExample)
 
 	// website::tag::3::Check the output against expected values.
 	// Verify we're getting back the outputs we expect
