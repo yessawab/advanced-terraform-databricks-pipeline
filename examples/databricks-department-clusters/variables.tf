@@ -12,7 +12,6 @@ variable "user_names" {
   default     = []
 }
 variable "group_name" {
-  type        = string
   description = "Name of the group to create"
 }
 variable "tags" {
