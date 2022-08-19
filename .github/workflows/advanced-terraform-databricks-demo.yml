@@ -53,9 +53,6 @@ jobs:
         with:
           tflint_version: v0.38.1            
                     
-      - name: Setup TFSec
-        uses: aquasecurity/tfsec-action@v1.0.0
-
       - name: Check formatting of Terraform code
         id: fmt
         run: |
@@ -83,8 +80,7 @@ jobs:
         run: tflint --enable-rule=terraform_typed_variables       
       
       - name: Running security checks
-        id: security_checks
-        run: tfsec
+        uses: aquasecurity/tfsec-action@v1.0.0
 
       - name: Terraform Unit Tests
         id: unit_tests
