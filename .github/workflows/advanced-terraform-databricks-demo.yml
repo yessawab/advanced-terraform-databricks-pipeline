@@ -47,6 +47,11 @@ jobs:
             echo "[DEFAULT]" >> ~/.databrickscfg
             echo "host = $DATABRICKS_HOST" >> ~/.databrickscfg
             echo "token = $DATABRICKS_TOKEN" >> ~/.databrickscfg
+
+      - uses: terraform-linters/setup-tflint@v2
+        name: Setup TFLint
+        with:
+          tflint_version: v0.38.1            
                     
       - name: Check formatting of Terraform code
         id: fmt
