@@ -41,6 +41,7 @@ jobs:
         uses: hashicorp/setup-terraform@v2.0.0
         with:
             terraform_version: '1.0.11'
+            terraform_wrapper: false
       
       - name: Set up Databricks CLI profile for Terraform provider
         run: |
