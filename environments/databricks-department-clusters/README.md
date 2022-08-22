@@ -1,6 +1,9 @@
-# manual-approve-with-github-actions
+# Advanced terraform databricks demo
 
 This directory contains Terraform code that shows how to use [databricks-department-clusters](../../modules/databricks-department-clusters) to create Databricks resources, together with CI/CD pipeline that demonstrate how to validate pull request changes before applying them & using approvals before deploying changes to production system.  Please note that existing Terraform code is cross-platform and could be deployed to a Databricks workspace at any supported cloud.
+
+
+<img src="waldo.png" alt="drawing" width="15"/>
 
 ## Workflow
 

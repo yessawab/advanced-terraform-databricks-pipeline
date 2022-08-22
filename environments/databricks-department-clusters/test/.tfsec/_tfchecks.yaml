@@ -1,0 +1,21 @@
+---
+    checks:
+    - code: ADB_NO_PUBLIC_IP
+      description: "Azure Databricks: Check for no_public_ip=true"
+      impact: "By not having no_public_ip the clusters will require public IPs and increased security risks"
+      resolution: "Set custom_parameters.no_public_ip to true"
+      requiredTypes:
+      - resource
+      requiredLabels:
+      - azurerm_databricks_workspace
+      severity: ERROR
+      matchSpec:
+        name: custom_parameters
+        action: isPresent
+        subMatch:
+          name: no_public_ip
+          action: equals
+          value: true
+      errorMessage: "The required custom_parameters.no_public_ip isn't true"
+      relatedLinks:
+      - https://docs.microsoft.com/en-us/azure/databricks/security/secure-cluster-connectivity

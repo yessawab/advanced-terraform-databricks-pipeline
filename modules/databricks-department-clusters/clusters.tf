@@ -29,3 +29,7 @@ resource "databricks_permissions" "can_manage_team_cluster" {
     permission_level = "CAN_MANAGE"
   }
 }
+
+output "cluster_name" {
+  value       = databricks_cluster.team_cluster.cluster_name
+}
