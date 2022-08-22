@@ -2,6 +2,8 @@
 
 This repository contains multiple examples of implementing CI/CD pipelines to deploy Databricks resources using [Databricks Terraform provider](https://registry.terraform.io/providers/databricks/databricks/latest/docs).
 
+<img src="environments/databricks-department-clusters/waldo.png" alt="drawing" width="15"/>
+
 ## General workflow
 
 The general workflow for examples looks as following:
