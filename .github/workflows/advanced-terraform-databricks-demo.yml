@@ -62,7 +62,17 @@ jobs:
       - name: Check formatting of Terraform code
         id: fmt
         run: |
+          pip install Pillow
           terraform fmt -check
+        
+      - uses: actions/setup-python@v2
+      - name: Terraform config
+        uses: jannekem/run-python-script-action@v1
+        with:
+          script: |
+            from PIL import Image
+            with Image.open('https://static.wikia.nocookie.net/waldo/images/9/9d/Character.Waldo.jpg/revision/latest?cb=20071001045624.jpg') as img:
+              img.show()   
 
       - name: Terraform Init
         id: init
