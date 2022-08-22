@@ -1,6 +1,7 @@
 package test
 
 import (
+	"fmt"
 	"path/filepath"
 	"testing"
 
@@ -42,5 +43,7 @@ func TestTerraformBasicExample(t *testing.T) {
 	clusterName := databricksCluster.AttributeValues["cluster_name"]
 
 	assert.Equal(t, expectedText, clusterName)
+	emoji := '\U0001F956'
+	fmt.Printf("French %c team", emoji)
 
 }
