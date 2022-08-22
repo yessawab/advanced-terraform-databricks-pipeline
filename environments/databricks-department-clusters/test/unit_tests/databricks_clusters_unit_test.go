@@ -44,6 +44,6 @@ func TestTerraformBasicExample(t *testing.T) {
 
 	assert.Equal(t, expectedText, clusterName)
 	emoji := '\U0001F956'
-	fmt.Printf("French %c team", emoji)
+	fmt.Printf("SEMEA team %c team", emoji)
 
 }
