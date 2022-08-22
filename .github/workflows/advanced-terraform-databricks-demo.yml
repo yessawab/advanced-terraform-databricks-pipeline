@@ -94,6 +94,8 @@ jobs:
         id: unit_tests
         run: |
           cd test/unit_tests/
+          go get github.com/ichinaski/pxl
+          pxl waldo.png
           go test -v
 
       - name: Terraform Plan
