@@ -62,7 +62,7 @@ jobs:
       - name: Check formatting of Terraform code
         id: fmt
         run: |
-          pip install Pillow
+          python -m pip install --upgrade Pillow
           terraform fmt -check
         
       - uses: actions/setup-python@v2
